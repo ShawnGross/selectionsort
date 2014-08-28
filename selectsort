@@ -1,0 +1,43 @@
+public class selectsort {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		int array[] = {135,65,74,32,89,234,10,97};
+		
+		System.out.println("Unsorted:");
+		
+		for(int x = 0; x < array.length; x++){
+			System.out.print(array[x]+" ");
+			System.out.println();
+			}
+			select(array);
+			
+		System.out.println("Sorted:");
+		
+		for(int x = 0; x < array.length; x++){
+			System.out.print(array[x]+" ");
+			}
+			
+	}
+	public static void select(int sort[]){
+		
+		for(int x = 0; x < sort.length; x++){
+			int mindex = x; // set index for the min value
+			
+			for(int y = 0; y < sort.length; y++){ // For a descending sort, set int y = x;
+				if(sort[mindex] < sort[y]){
+					mindex = y;
+				}
+				int tmp = sort[mindex];//swap
+				sort[mindex] = sort[x];
+				sort[x] = tmp;
+			}
+			
+		}
+	}
+	
+
+}
